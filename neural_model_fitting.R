@@ -75,6 +75,8 @@ print(summary(pwi_model_distrcont))
 # modeling interactions between interference effects
 # does the unrelated vs. related effect arise under low sequential response interference?
 # adding three-way interaction for PTri only, to understand its role in interference resolution, no other effects 
+print("fitting a model that includes three-way interaction between PTri, condition, and sequential response dissim.")
+print("this model addresses whether the distractor interference effects arise specifically under low sequential resp. interference")
 pwi_model_effectinter <- lmer(data = pwi_data,
                               logRT ~ 
                                 POper*(Condition + consec_dissimilarity) + 

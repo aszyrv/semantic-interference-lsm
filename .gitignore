@@ -1,4 +1,5 @@
 data
 pwi_data_clean_withpreds.csv
-*ipynb_checkpoints
 navec_hudlit_v1_12B_500K_300d_100q.tar
+\.ipynb_checkpoints
+\.Rhistory

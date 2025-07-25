@@ -1,5 +1,7 @@
 data
 pwi_data_clean_withpreds.csv
 navec_hudlit_v1_12B_500K_300d_100q.tar
+code_first_submission
+figures_tables_edited
 \.ipynb_checkpoints
 \.Rhistory

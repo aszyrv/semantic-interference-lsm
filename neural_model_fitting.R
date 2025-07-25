@@ -72,27 +72,6 @@ print(summary(pwi_model_distrcont))
 
 #==== Additional modelling at R1 ====
 
-# modeling interactions between interference effects
-# does the unrelated vs. related effect arise under low sequential response interference?
-# adding three-way interaction for PTri only, to understand its role in interference resolution, no other effects 
-print("fitting a model that includes three-way interaction between PTri, condition, and sequential response dissim.")
-print("this model addresses whether the distractor interference effects arise specifically under low sequential resp. interference")
-pwi_model_effectinter <- lmer(data = pwi_data,
-                              logRT ~ 
-                                POper*(Condition + consec_dissimilarity) + 
-                                PTri*Condition*consec_dissimilarity + 
-                                SLF_I*(Condition + consec_dissimilarity) + 
-                                SLF_II*(Condition + consec_dissimilarity) + 
-                                PreCG*(Condition + consec_dissimilarity) + 
-                                logfreq + Age + Sex + Post.onset.weeks +
-                                (1|ID) + (1|Critical.segment),
-                              control=lmerControl(optimizer="bobyqa"))
-
-print("variance inflation factors:")
-print(car::vif(pwi_model_effectinter))
-anova(pwi_model_effectinter, pwi_model) # no improvement
-print(summary(pwi_model_effectinter)) # effects are all the same as in the original model, three-way interaction not significant
-
 # modelling the effects of IFOF
 pwi_model_IFOF <- lmer(data = pwi_data,
                        logRT ~ 
